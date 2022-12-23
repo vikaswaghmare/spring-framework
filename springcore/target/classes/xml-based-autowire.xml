@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+<!-- <bean id="eaddr" class="com.springcore.XMLBasedAutowiring.Address">
+<property name="hno" value="23/3rt"/>
+<property name="street" value="PS Road"/>
+<property name="city" value="Hyd"/>
+<property name="state" value="Tel"/>
+</bean>
+<bean id="eacc" class="com.springcore.XMLBasedAutowiring.Account">
+<property name="accNo" value="abc123"/>
+<property name="accName" value="Durga"/>
+<property name="accType" value="Savings"/>
+<property name="balance" value="20000"/>
+</bean>
+ <bean id="emp" class="com.springcore.XMLBasedAutowiring.Employee" autowire="byName">
+<property name="eid" value="E-111"/>
+<property name="ename" value="Durga"/>
+ 
+  <property name="eaddr" ref="eaddr"/>
+<property name="eacc" ref="eacc"/>
+      
+</bean>
+-->
+<bean id="eaddr" class="com.springcore.XMLBasedAutowiring.Address">
+<constructor-arg name="hno" value="23/3rt"/>
+<constructor-arg name="street" value="PS Road"/>
+<constructor-arg name="city" value="Hyd"/>
+<constructor-arg name="state" value="Tel"/>
+</bean>
+<bean id="eacc" class="com.springcore.XMLBasedAutowiring.Account">
+<constructor-arg name="accNo" value="abc123"/>
+<constructor-arg name="accName" value="Durga"/>
+<constructor-arg name="accType" value="Savings"/>
+<constructor-arg name="balance" value="20000"/>
+</bean>
+ <bean id="emp" class="com.springcore.XMLBasedAutowiring.Employee" autowire="constructor">
+	<constructor-arg name="eid" value="E-111"/>
+	<constructor-arg name="ename" value="Durga"/>
+ 
+<!--  <property name="eaddr" ref="eaddr"/>
+<property name="eacc" ref="eacc"/>-->
+      
+</bean>
+
+
+<bean id="e" class="com.springcore.XMLBasedAutowiring.Engine" p:modelName="New model" autowire-candidate="false"/>
+<bean id="eq" class="com.springcore.XMLBasedAutowiring.Engine" p:modelName="basic model" />
+<bean id="c" class="com.springcore.XMLBasedAutowiring.Car" p:carName="Audi" autowire="byType"/>
+
+
+</beans>

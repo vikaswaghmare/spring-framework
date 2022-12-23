@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+   <context:annotation-config/>
+  <!-- setter method   
+  <bean id="Core_Java" class="com.springcore.annotationBasedAutowiring.Course">
+ <property name="cid" value="C-1121"/>
+ <property name="cname" value="Core  Java"/>
+ <property name="ccost" value="20001"/>
+ </bean>
+
+ <bean id="adv_Java" class="com.springcore.annotationBasedAutowiring.Course">
+ <property name="cid" value="C-111"/>
+ <property name="cname" value="Adv Java"/>
+ <property name="ccost" value="20000"/>
+ </bean>
+ <bean id="std" class="com.springcore.annotationBasedAutowiring.Student" >
+<property name="sid" value="S-111"/>
+<property name="sname" value="Durga"/>
+ </bean>
+  -->    
+ 
+  <bean id="core_Java" class="com.springcore.annotationBasedAutowiring.Course">
+ 	<property name="cid" value="C-111"/>
+ 	<property name="cname" value="Core Java"/>
+ 	<property name="ccost" value="10000"/>
+ </bean>
+ <bean id="adv_Java" class="com.springcore.annotationBasedAutowiring.Course">
+	 <property name="cid" value="C-111"/>
+ 	 <property name="cname" value="Adv Java"/>
+ 	 <property name="ccost" value="20000"/>
+ </bean>
+<bean id="std" class="com.springcore.annotationBasedAutowiring.Student" >
+	<constructor-arg name="sid" value="S-111"/>
+	<constructor-arg name="sname" value="Durga"/>
+</bean>
+ 
+        
+</beans>

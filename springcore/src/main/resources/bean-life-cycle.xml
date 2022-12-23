@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+  
+<!--  
+<bean id="helloBean" class="com.springcore.beanLifeCycle.HelloBean" factory-method="getHelloBean" factory-bean="factoryBean" />
+<bean id="factoryBean" class="com.springcore.beanLifeCycle.HellowBeanFactory"/>-->
+
+
+
+ <!--  
+<bean id="wel" class="com.springcore.beanLifeCycle.HelloBean"  init-method="init" destroy-method="destroy" /> -->
+
+<!--  <bean id="wel" class="com.springcore.beanLifeCycle.HelloBean">
+	<property name="message" value="Cool"></property>
+</bean>
+
+	<context:annotation-config/>
+<bean id="wel" class="com.springcore.beanLifeCycle.HellowBeanFactory">
+	<property name="message" value="Cool"></property>
+</bean>
+-->
+ 
+ <bean id="cust" class="com.springcore.beanLifeCycle.Customer" init-method="init" destroy-method="destroy">
+<property name="cid" value="C-111"/>
+<property name="cname" value="Durga"/>
+<property name="caddr" value="Hyd"/>
+ </bean>
+ <bean class="com.springcore.beanLifeCycle.BeanPostProcessorImpl"/>
+ 
+
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+   <bean name="helloBean" class="com.springcore.customThreadScope.HelloBean" scope="thread"/>
+    <bean name="threadScope" class="com.springcore.customThreadScope.ThreadScope"/>
+     <bean name="scopeConfigurer" class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+     	<property name="scopes">
+     		<map>
+     			<entry key="thread" value-ref="threadScope"/>
+     		</map>
+     	</property>
+     </bean>
+  
+ 
+        
+</beans>

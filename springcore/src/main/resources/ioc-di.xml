@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <!-- Construction injections -->
+        <bean id="crs" class="com.springcore.ioc.Course">
+			<constructor-arg index="0" value="C-111"/>
+			<constructor-arg  index="1" value="JAVA"/>
+			<constructor-arg  index="2" value="5000"/>
+			<property name="courseId" value="v-222"/>
+			<property name="courseName" value="spring"/>
+			<property name="courseCost" value="2220"/>
+			
+		</bean>
+		
+		<!-- Method injections -->
+		<bean id="account" class="com.springcore.ioc.Account">
+			<property name="accountNo" value="abc123"/>
+			<property name="accountName" value="Durga"/>
+			<property name="accountType" value="Savings"/>
+			<property name="balance" value="25000"/>
+		</bean>
+		<!-- Method injections -->
+		<bean id="employee" class="com.springcore.ioc.Employee">
+			<property name="employeeId" value="E-111" />
+			<property name="employeeName" value="Durga"/>
+			<property name="employeeSalary" value="50000"/>
+			<property name="employeeAddress" value="Hyd"/>
+			<property name="account" ref="account"/>
+</bean>
+
+<!--   
+<bean id="address" class="com.springcore.ioc.Address">	
+	<property name="plotNo" value="202"/>
+	<property name="street" value="M G Road"/>
+	<property name="city" value="Banglore"/>
+	<property name="country" value="India"/>
+</bean>
+<bean id="student" class="com.springcore.ioc.Student">
+	<property name="studentId" value="S-111"/>
+	<property name="studentName" value="Durga"/>
+	<property name="studentAddress">
+	<ref bean="address"/>
+	</property>
+	<property name="studentQuality">
+	<list>
+		<value>BTech</value>
+		<value>MTech</value>
+		<value>PHD</value>
+	</list>
+</property>
+<property name="studentCourses">
+		<set>
+			<value>Core Java</value>
+			<value>Adv Java</value>
+			<value>Spring</value>
+			<value>Hibernate</value>
+			<value>WebServices</value>
+		</set>
+</property>
+<property name="studentCoursesAndFaculty">
+	<map>
+		<entry key="Core Java" value="Ratan"/>
+		<entry key="Adv Java" value="Durga"/>
+		<entry key="Spring" value="Sriman"/>
+		<entry key="Hibernate" value="Naveen"/>
+		<entry key="Webservices" value="Naidu"/>
+</map>
+</property>
+	<property name="studentCourseAndCost">
+		<props>
+			<prop key="Core Java">1500</prop>
+			<prop key="Adv Java">2000</prop>
+			<prop key="Spring">3000</prop>
+			<prop key="Hibernate">3000</prop>
+		<prop key="Webservices">3000</prop>
+		</props>
+</property>
+
+-->
+<bean id="address" p:plotNo="202" p:street="M G Road" p:city="Banglore" p:country="India" class="com.springcore.ioc.Address"/>	
+<bean id="student" p:studentId="S-111" p:studentName="Durga" p:studentAddress-ref="address"
+class="com.springcore.ioc.Student"/>
+		
+</beans>
